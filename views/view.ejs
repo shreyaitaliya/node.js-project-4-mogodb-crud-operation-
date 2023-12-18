@@ -1,0 +1,41 @@
+<center>
+    <h1>View Page</h1>
+    <table border="1">
+        <tr>
+            <td>Srno</td>
+            <td>Book Name</td>
+            <td>Published Year</td>
+            <td>Athor Name</td>
+            <td>Book Pages</td>
+            <td>Price</td>
+            <td>Action</td>
+        </tr>
+        <% record.map((value,i)=>{i=i+1 %>
+            <tr>
+                <td>
+                    <%= i %>
+                </td>
+                <td>
+                    <%= value.name %>
+                </td>
+                <td>
+                    <%= value.publishedyear %>
+                </td>
+                <td>
+                    <%= value.authorname %>
+                </td>
+                <td>
+                    <%= value.bookpages %>
+                </td>
+                <td>
+                    <%= value.price %>
+                </td>
+                <td>
+                    <button><a href="/deleteRecord?delid=<%= value.id %>">Delete</a></button> ||
+                    <button><a href="/editRecord?editid=<%= value.id %>">Edit</a></button>
+                </td>
+            </tr>
+            <% }) %>
+    </table>
+    <button><a href="/add">Add Page</a></button>
+</center>
